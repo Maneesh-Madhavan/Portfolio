@@ -1,0 +1,62 @@
+<section class="projects-section" id="projects">
+  <span class="section-heading">Projects</span>
+
+  <div class="projects-container">
+    <mat-card *ngFor="let project of projects" class="project-card">
+      <mat-card-title>{{ project.title }}</mat-card-title>
+
+      <!-- Main image + thumbnail previews -->
+      <div class="project-image-carousel">
+        <!-- <button class="carousel-btn prev" (click)="prevImage(project)">&#10094;</button> -->
+
+        <div class="carousel-main">
+          <img [src]="project.images[project.currentIndex]" alt="{{ project.title }}" class="main-img"
+            (click)="openImageModal(project, project.currentIndex)" />
+
+        </div>
+
+        <!-- <button class="carousel-btn next" (click)="nextImage(project)">&#10095;</button> -->
+      </div>
+
+      <div class="thumbnail-previews">
+        <img *ngFor="let img of project.images; let i = index" [src]="img" [class.active]="i === project.currentIndex"
+          (click)="project.currentIndex = i" class="thumb-img" />
+      </div>
+
+      <mat-card-content class="project-content">
+        <p>{{ project.description }}</p>
+        <p><strong>Tech Stack:</strong> {{ project.tech.join(', ') }}</p>
+      </mat-card-content>
+
+      <mat-card-actions class="project-actions">
+        <button mat-stroked-button color="primary" class="action-btn" (click)="openLive(project.liveUrl)"
+          [disabled]="!project.liveUrl">Live Demo</button>
+        <button mat-stroked-button color="primary" class="action-btn" (click)="openRepo(project.repoUrl)"
+          [disabled]="!project.repoUrl">
+          <i class="fi fi-brands-github"></i> Repository
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+
+  </div>
+</section>
+<div class="image-modal" *ngIf="isModalOpen" (click)="closeModal()">
+
+  <!-- Modal content -->
+  <div class="modal-content" (click)="$event.stopPropagation()">
+
+    <!-- Close -->
+    <button class="modal-close" (click)="closeModal()">✕</button>
+
+    <!-- Previous -->
+    <button class="modal-nav prev" (click)="prevModalImage()">‹</button>
+
+    <!-- Image -->
+    <img [src]="modalImages[modalIndex]" class="modal-img" alt="Project image" />
+
+    <!-- Next -->
+    <button class="modal-nav next" (click)="nextModalImage()">›</button>
+
+  </div>
+</div>

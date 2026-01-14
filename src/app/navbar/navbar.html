@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+  <span style="font-size: 1.2rem;color: #00695c;"><b>Maneesh M</b></span>
+  <span class="spacer"></span>
+
+  <!-- Desktop buttons -->
+  <div class="desktop-buttons">
+    <button mat-button (click)="scrollTo('hero')">Home</button>
+    <button mat-button (click)="scrollTo('about')">About</button>
+    <button mat-button (click)="scrollTo('projects')">Projects</button>
+    <button mat-button (click)="scrollTo('contact')">Contact</button>
+  </div>
+
+  <!-- Mobile icons -->
+  <div class="mobile-icons">
+    <button mat-icon-button matTooltip="Home" (click)="scrollTo('hero')">
+      <mat-icon>home</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="About" (click)="scrollTo('about')">
+      <mat-icon>person</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Projects" (click)="scrollTo('projects')">
+      <mat-icon>work</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Contact" (click)="scrollTo('contact')">
+      <mat-icon>mail</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
