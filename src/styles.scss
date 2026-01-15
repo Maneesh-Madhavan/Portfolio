@@ -248,7 +248,7 @@ mat-toolbar button:hover {
 /* Mobile refinement */
 @media (max-width: 768px) {
   .about-card {
-    padding: 3rem 2rem 1.5rem;
+    padding: 3rem 2rem 0.5rem;
   }
 
   .about-intro {
@@ -773,7 +773,7 @@ mat-toolbar button:hover {
 /* Mobile */
 @media (max-width: 768px) {
   .experience-card {
-    padding: 3rem 2rem 2rem;
+    padding: 3rem 2rem 0rem;
   }
 
   .experience-header h3 {
