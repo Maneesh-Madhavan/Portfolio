@@ -45,7 +45,7 @@ export class Projects {
       'Responsive UI',
       'Vercel Deployment'],
       images: ['/blog1.png','/blog2.png','/blog3.png','/blog4.png'],
-      liveUrl: 'https://blog-mern-frontend-opal-delta.vercel.app/',
+      liveUrl: 'https://insightblog-mernblog.vercel.app',
       repoUrl: 'https://github.com/Maneesh-Madhavan/Blog-MERN.git',
       currentIndex: 0
     }

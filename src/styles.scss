@@ -83,7 +83,6 @@ button.mat-stroked-button:hover {
 .mobile-icons {
   display: none;
   align-items: center;
-  gap: 0.5rem;
 
   .flaticon-icon {
     width: 28px;
@@ -109,6 +108,17 @@ mat-toolbar {
   display: flex;
   align-items: center;
 }
+.desktop-buttons button.active {
+  color: $primary-teal; // teal highlight
+  font-weight: 400;
+}
+
+/* Highlight active mobile icon */
+.mobile-icons button.active mat-icon {
+  color: #2D8A80;
+  transform: scale(1.2);
+  transition: all 0.2s;
+}
 
 .spacer {
   flex: 1 1 auto;
@@ -131,8 +141,7 @@ mat-toolbar button:hover {
   }
 
   .mobile-icons {
-    display: flex;
-    gap: 0.5rem;
+    display: flex
   }
 }
 
@@ -210,26 +219,43 @@ mat-toolbar button:hover {
 // -----------------------------
 .about-card {
   max-width: 900px;
-  margin: 0rem auto;
-  margin-bottom: 0rem;
-  padding: 5rem;
-  padding-bottom: 1rem;
+  margin: 0 auto;
+  padding: 4rem 5rem 0rem;
   text-align: center;
   background: $bg-card;
   border-radius: 24px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
-.about-card mat-card-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: $primary-teal;
+.about-intro {
+  font-size: 1.15rem;
+  line-height: 1.7;
   margin-bottom: 2rem;
+  color: #333;
 }
 
-.about-card p {
-  font-size: 1.1rem;
+.about-highlights p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #444;
 }
+
+.about-highlights strong {
+  color: $primary-teal;
+}
+
+/* Mobile refinement */
+@media (max-width: 768px) {
+  .about-card {
+    padding: 3rem 2rem 1.5rem;
+  }
+
+  .about-intro {
+    font-size: 1.05rem;
+  }
+}
+
 
 // -----------------------------
 // Projects Section
@@ -408,6 +434,10 @@ mat-toolbar button:hover {
   .about-card {
     padding: 5rem 0.5rem;
     padding-bottom: 0rem;
+  }
+  .experience-card{
+    padding-left: 1rem;
+    padding-right: 1rem
   }
 
   .hero-image {
@@ -675,4 +705,78 @@ mat-toolbar button:hover {
   line-height: 1.6;
   color: #555;
   margin-bottom: 1.5rem;
+}
+.experience-card {
+  max-width: 900px;
+  margin: 0rem auto 0;
+  padding: 4rem 2rem 0rem;
+  background: $bg-card;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.experience-header {
+  margin-bottom: 1.5rem;
+}
+
+.experience-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.company {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: $primary-teal;
+  margin-top: 0.25rem;
+}
+
+.duration {
+  display: block;
+  font-size: 0.95rem;
+  color: #777;
+  margin-top: 0.2rem;
+}
+
+.experience-summary {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 1.5rem 0;
+  color: #333;
+}
+
+.experience-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-points li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.9rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #444;
+}
+
+.experience-points li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: $primary-teal;
+  font-size: 1.2rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .experience-card {
+    padding: 3rem 2rem 2rem;
+  }
+
+  .experience-header h3 {
+    font-size: 1.25rem;
+  }
 }

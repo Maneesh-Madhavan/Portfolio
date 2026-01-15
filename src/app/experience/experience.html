@@ -1,0 +1,23 @@
+<mat-card class="experience-card" id="experience">
+  <span class="section-heading">Experience</span>
+
+  <mat-card-content>
+    <ng-container *ngFor="let exp of experiences">
+      <div class="experience-header">
+        <h3>{{ exp.role }}</h3>
+        <span class="company">{{ exp.company }}</span>
+        <span class="duration">{{ exp.duration }}</span>
+      </div>
+
+      <p class="experience-summary">
+        {{ exp.summary }}
+      </p>
+
+      <ul class="experience-points">
+        <li *ngFor="let point of exp.points">
+          {{ point }}
+        </li>
+      </ul>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

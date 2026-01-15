@@ -4,26 +4,29 @@
 
   <!-- Desktop buttons -->
   <div class="desktop-buttons">
-    <button mat-button (click)="scrollTo('hero')">Home</button>
-    <button mat-button (click)="scrollTo('about')">About</button>
-    <button mat-button (click)="scrollTo('projects')">Projects</button>
-    <button mat-button (click)="scrollTo('contact')">Contact</button>
+    <button mat-button [class.active]="activeSection==='hero'" (click)="scrollTo('hero')">Home</button>
+    <button mat-button [class.active]="activeSection==='about'" (click)="scrollTo('about')">About</button>
+    <button mat-button [class.active]="activeSection==='experience'" (click)="scrollTo('experience')">Experience</button>
+    <button mat-button [class.active]="activeSection==='projects'" (click)="scrollTo('projects')">Projects</button>
+    <button mat-button [class.active]="activeSection==='contact'" (click)="scrollTo('contact')">Contact</button>
   </div>
 
   <!-- Mobile icons -->
   <div class="mobile-icons">
-    <button mat-icon-button matTooltip="Home" (click)="scrollTo('hero')">
+    <button mat-icon-button matTooltip="Home" [class.active]="activeSection==='hero'" (click)="scrollTo('hero')">
       <mat-icon>home</mat-icon>
     </button>
-    <button mat-icon-button matTooltip="About" (click)="scrollTo('about')">
+    <button mat-icon-button matTooltip="About" [class.active]="activeSection==='about'" (click)="scrollTo('about')">
       <mat-icon>person</mat-icon>
     </button>
-    <button mat-icon-button matTooltip="Projects" (click)="scrollTo('projects')">
+    <button mat-icon-button matTooltip="Experience" [class.active]="activeSection==='experience'" (click)="scrollTo('experience')">
       <mat-icon>work</mat-icon>
     </button>
-    <button mat-icon-button matTooltip="Contact" (click)="scrollTo('contact')">
+    <button mat-icon-button matTooltip="Projects" [class.active]="activeSection==='projects'" (click)="scrollTo('projects')">
+      <mat-icon>assignment</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Contact" [class.active]="activeSection==='contact'" (click)="scrollTo('contact')">
       <mat-icon>mail</mat-icon>
     </button>
   </div>
 </mat-toolbar>
-

@@ -9,19 +9,4 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './contact.scss',
 })
 export class Contact {
- contactForm = new FormGroup({
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    message: new FormControl('', Validators.required)
-  });
-
-  submit() {
-    if (this.contactForm.valid) {
-      console.log(this.contactForm.value);
-      alert('Message sent!');
-      this.contactForm.reset();
-    } else {
-      alert('Please fill all required fields.');
-    }
-  }
 }

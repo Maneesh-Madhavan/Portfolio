@@ -5,14 +5,16 @@ import { Contact } from "./contact/contact";
 import { Projects } from "./projects/projects";
 import { About } from "./about/about";
 import { HeroComponent } from "./hero/hero";
+import { Experience } from "./experience/experience";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, Contact, Projects, About, HeroComponent],
+  imports: [Navbar, Contact, Projects, About, HeroComponent, Experience],
   template: `
     <app-navbar></app-navbar>
     <app-hero id="hero"></app-hero>
     <app-about id="about"></app-about>
+    <app-experience id="experience"></app-experience>
     <app-projects id="projects"></app-projects>
     <app-contact id="contact"></app-contact>
   `,
