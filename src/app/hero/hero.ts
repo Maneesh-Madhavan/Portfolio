@@ -14,11 +14,16 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [MatToolbarModule, MatCardModule, MatButtonModule,MatIconModule] 
 })
 export class HeroComponent {
-    downloadResume() {
+  downloadResume() {
     // Create an invisible <a> element and trigger download
     const link = document.createElement('a');
     link.href = '/ManeeshResume.pdf'; // public folder path
     link.download = 'ManeeshResume.pdf';
     link.click();
+  }
+
+  scrollToProjects() {
+    const el = document.getElementById('projects');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
   }
 }

@@ -1,21 +1,16 @@
-<section class="projects-section" id="projects">
-  <span class="section-heading">Projects</span>
+<div class="section-card">
+  <div class="section-num">03</div>
+  <div class="section-title">Projects</div>
+  
+  <div class="projects-grid">
+    <div *ngFor="let project of projects" class="proj-card">
+      <h3 class="proj-title">{{ project.title }}</h3>
 
-  <div class="projects-container">
-    <mat-card *ngFor="let project of projects" class="project-card">
-      <mat-card-title>{{ project.title }}</mat-card-title>
-
-      <!-- Main image + thumbnail previews -->
-      <div class="project-image-carousel">
-        <!-- <button class="carousel-btn prev" (click)="prevImage(project)">&#10094;</button> -->
-
+      <div class="proj-image-carousel">
         <div class="carousel-main">
           <img [src]="project.images[project.currentIndex]" alt="{{ project.title }}" class="main-img"
             (click)="openImageModal(project, project.currentIndex)" />
-
         </div>
-
-        <!-- <button class="carousel-btn next" (click)="nextImage(project)">&#10095;</button> -->
       </div>
 
       <div class="thumbnail-previews">
@@ -23,29 +18,28 @@
           (click)="project.currentIndex = i" class="thumb-img" />
       </div>
 
-      <mat-card-content class="project-content">
-        <p>{{ project.description }}</p>
-        <p><strong>Tech Stack:</strong> {{ project.tech.join(', ') }}</p>
-      </mat-card-content>
+      <div class="proj-content">
+        <p class="proj-desc">{{ project.description }}</p>
+        
+        <div class="proj-tech">
+          <span *ngFor="let t of project.tech" class="tech-pill">{{ t }}</span>
+        </div>
+      </div>
 
-      <mat-card-actions class="project-actions">
-        <button mat-stroked-button color="primary" class="action-btn" (click)="openLive(project.liveUrl)"
-          [disabled]="!project.liveUrl">Live Demo</button>
-        <button mat-stroked-button color="primary" class="action-btn" (click)="openRepo(project.repoUrl)"
-          [disabled]="!project.repoUrl">
+      <div class="proj-actions">
+        <button class="btn-primary btn-sm" (click)="openLive(project.liveUrl)" [disabled]="!project.liveUrl">Live Demo</button>
+        <button class="btn-secondary btn-sm" (click)="openRepo(project.repoUrl)" [disabled]="!project.repoUrl">
           <i class="fi fi-brands-github"></i> Repository
         </button>
-      </mat-card-actions>
-    </mat-card>
-
-
+      </div>
+    </div>
   </div>
-</section>
-<div class="image-modal" *ngIf="isModalOpen" (click)="closeModal()">
+</div>
 
+<!-- Image Modal -->
+<div class="image-modal" *ngIf="isModalOpen" (click)="closeModal()">
   <!-- Modal content -->
   <div class="modal-content" (click)="$event.stopPropagation()">
-
     <!-- Close -->
     <button class="modal-close" (click)="closeModal()">✕</button>
 
@@ -57,6 +51,5 @@
 
     <!-- Next -->
     <button class="modal-nav next" (click)="nextModalImage()">›</button>
-
   </div>
 </div>

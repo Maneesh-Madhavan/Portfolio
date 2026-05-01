@@ -1,32 +1,29 @@
-<mat-toolbar color="primary">
-  <span style="font-size: 1.2rem;color: #00695c;"><b>Maneesh M</b></span>
-  <span class="spacer"></span>
+<div class="nav">
+  <div class="nav-logo">Maneesh M</div>
 
-  <!-- Desktop buttons -->
-  <div class="desktop-buttons">
-    <button mat-button [class.active]="activeSection==='hero'" (click)="scrollTo('hero')">Home</button>
-    <button mat-button [class.active]="activeSection==='about'" (click)="scrollTo('about')">About</button>
-    <button mat-button [class.active]="activeSection==='experience'" (click)="scrollTo('experience')">Experience</button>
-    <button mat-button [class.active]="activeSection==='projects'" (click)="scrollTo('projects')">Projects</button>
-    <button mat-button [class.active]="activeSection==='contact'" (click)="scrollTo('contact')">Contact</button>
-  </div>
+  <div class="nav-right">
+    <div class="nav-links">
+      <span [class.active]="activeSection === 'hero'" (click)="scrollTo('hero')">
+        <span class="desktop-text">Home</span>
+        <i class="fi fi-rr-home mobile-icon"></i>
+      </span>
+      <span [class.active]="activeSection === 'about'" (click)="scrollTo('about')">
+        <span class="desktop-text">About</span>
+        <i class="fi fi-rr-user mobile-icon"></i>
+      </span>
+      <span [class.active]="activeSection === 'experience'" (click)="scrollTo('experience')">
+        <span class="desktop-text">Experience</span>
+        <i class="fi fi-rr-briefcase mobile-icon"></i>
+      </span>
+      <span [class.active]="activeSection === 'projects'" (click)="scrollTo('projects')">
+        <span class="desktop-text">Projects</span>
+        <i class="fi fi-rr-folder mobile-icon"></i>
+      </span>
+    </div>
 
-  <!-- Mobile icons -->
-  <div class="mobile-icons">
-    <button mat-icon-button matTooltip="Home" [class.active]="activeSection==='hero'" (click)="scrollTo('hero')">
-      <mat-icon>home</mat-icon>
-    </button>
-    <button mat-icon-button matTooltip="About" [class.active]="activeSection==='about'" (click)="scrollTo('about')">
-      <mat-icon>person</mat-icon>
-    </button>
-    <button mat-icon-button matTooltip="Experience" [class.active]="activeSection==='experience'" (click)="scrollTo('experience')">
-      <mat-icon>work</mat-icon>
-    </button>
-    <button mat-icon-button matTooltip="Projects" [class.active]="activeSection==='projects'" (click)="scrollTo('projects')">
-      <mat-icon>assignment</mat-icon>
-    </button>
-    <button mat-icon-button matTooltip="Contact" [class.active]="activeSection==='contact'" (click)="scrollTo('contact')">
-      <mat-icon>mail</mat-icon>
-    </button>
+    <div class="theme-toggle" (click)="toggleTheme()">
+      <i class="fi fi-rr-moon" style="margin-top: 4px;" *ngIf="!isDarkMode"></i>
+      <i class="fi fi-rr-sun" *ngIf="isDarkMode"></i>
+    </div>
   </div>
-</mat-toolbar>
+</div>

@@ -1,0 +1,78 @@
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 16px;
+  max-width: 800px;
+}
+
+.exp-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  background: var(--bg-main); /* slightly darker/different beige */
+  border-radius: 12px;
+  border: 0.5px solid var(--border-color);
+}
+
+.exp-header h3 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.company {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--accent-color);
+  font-weight: 500;
+  display: block;
+}
+
+.duration {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: #999;
+  display: block;
+  margin-top: 4px;
+}
+
+.exp-summary {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-desc);
+  margin-bottom: 8px;
+}
+
+.exp-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-points li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.dot {
+  margin-top: 6px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.point-text {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
