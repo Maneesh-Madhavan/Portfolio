@@ -11,32 +11,33 @@
   --font-body: 'DM Sans', sans-serif;
 
   /* Light Theme (Default) */
-  --bg-main: #e0d9d0; 
-  --bg-port: #f5f0eb; 
+  --bg-main: #e0d9d0;
+  --bg-port: #f5f0eb;
   --border-color: #e0d9d0;
   --text-main: #1a1a1a;
   --text-muted: #777;
   --text-desc: #555;
-  --accent-color: #1D9E75; 
+  --accent-color: #1D9E75;
   --accent-light: rgba(29, 158, 117, 0.15);
   --bg-dark: #1c1c1e;
   --bg-glass: rgba(245, 240, 235, 0.8);
 }
 
 [data-theme="dark"] {
-  --bg-main: #0c0d11; 
-  --bg-port: #16181d; 
+  --bg-main: #0c0d11;
+  --bg-port: #16181d;
   --border-color: rgba(255, 255, 255, 0.08);
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --text-desc: #cbd5e1;
-  --accent-color: #20c997; 
+  --accent-color: #20c997;
   --accent-light: rgba(32, 201, 151, 0.15);
   --bg-dark: #101216;
   --bg-glass: rgba(22, 24, 29, 0.8);
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -44,23 +45,39 @@ html, body {
   background-color: var(--bg-port);
   color: var(--text-main);
   scroll-behavior: smooth;
-  padding-bottom: 60px; /* space for fixed footer */
+  padding-bottom: 30px;
+  /* space for fixed footer */
 }
 
 @media (max-width: 768px) {
-  html, body {
-    padding-bottom: 50px; /* slightly smaller space for fixed footer on mobile */
+
+  html,
+  body {
+    padding-bottom: 50px;
+    /* slightly smaller space for fixed footer on mobile */
   }
 }
 
-h1, h2, h3, h4, h5, h6, .section-heading, .section-title, .hero-name {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-heading,
+.section-title,
+.hero-name {
   font-family: var(--font-heading) !important;
   font-weight: 700;
   color: var(--text-main);
   margin: 0;
 }
 
-p, span, div, ul, li {
+p,
+span,
+div,
+ul,
+li {
   font-family: var(--font-body);
 }
 
@@ -77,14 +94,20 @@ p, span, div, ul, li {
 }
 
 /* Offset for sticky navbar scrolling */
-app-hero, app-about, app-experience, app-projects, app-contact {
+app-hero,
+app-about,
+app-experience,
+app-projects,
+app-contact {
   display: block;
-  scroll-margin-top: 56px; /* Adjusted to exactly match navbar height */
+  scroll-margin-top: 56px;
+  /* Adjusted to exactly match navbar height */
 }
 
 /* Typography Overrides */
 .section-heading {
-  display: none; /* We will use section-card styling instead for headers where appropriate, or re-style it */
+  display: none;
+  /* We will use section-card styling instead for headers where appropriate, or re-style it */
 }
 
 /* Buttons */
@@ -150,12 +173,13 @@ app-hero, app-about, app-experience, app-projects, app-contact {
   max-height: 90vh;
   object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 0 50px rgba(0,0,0,0.2);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
 }
 
-.modal-close, .modal-nav {
+.modal-close,
+.modal-nav {
   position: absolute;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -166,23 +190,54 @@ app-hero, app-about, app-experience, app-projects, app-contact {
   transition: all 0.3s ease;
 }
 
-.modal-close:hover, .modal-nav:hover {
+.modal-close:hover,
+.modal-nav:hover {
   background: var(--accent-color);
 }
 
-.modal-close { top: -2rem; right: -2rem; width: 40px; height: 40px; font-size: 1.5rem; }
-.modal-nav { top: 50%; transform: translateY(-50%); width: 50px; height: 50px; font-size: 2rem; }
-.modal-nav.prev { left: -4rem; }
-.modal-nav.next { right: -4rem; }
+.modal-close {
+  top: -2rem;
+  right: -2rem;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+}
+
+.modal-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+}
+
+.modal-nav.prev {
+  left: -4rem;
+}
+
+.modal-nav.next {
+  right: -4rem;
+}
 
 @media (max-width: 768px) {
-  .modal-close { top: 1rem; right: 1rem; }
-  .modal-nav.prev { left: 1rem; }
-  .modal-nav.next { right: 1rem; }
+  .modal-close {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .modal-nav.prev {
+    left: 1rem;
+  }
+
+  .modal-nav.next {
+    right: 1rem;
+  }
 }
 
 /* Hide Material Overrides that clash */
-.mat-mdc-button, .mat-mdc-raised-button, .mat-mdc-stroked-button {
+.mat-mdc-button,
+.mat-mdc-raised-button,
+.mat-mdc-stroked-button {
   font-family: var(--font-body) !important;
   border-radius: 100px !important;
   border-color: var(--accent-color) !important;
