@@ -17,8 +17,8 @@ export class HeroComponent {
   downloadResume() {
     // Create an invisible <a> element and trigger download
     const link = document.createElement('a');
-    link.href = '/ManeeshResume.pdf'; // public folder path
-    link.download = 'ManeeshResume.pdf';
+    link.href = '/Maneesh_M_Resume.pdf'; // public folder path
+    link.download = 'Maneesh_M_Resume.pdf';
     link.click();
   }
 

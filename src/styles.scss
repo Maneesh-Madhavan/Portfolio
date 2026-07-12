@@ -48,13 +48,34 @@ body {
   padding-bottom: 30px;
   /* space for fixed footer */
 }
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-port);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border: 3.5px solid var(--bg-port);
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: var(--accent-color) var(--bg-port);
+  }
+}
 
 @media (max-width: 768px) {
 
   html,
   body {
     padding-bottom: 50px;
-    /* slightly smaller space for fixed footer on mobile */
   }
 }
 
